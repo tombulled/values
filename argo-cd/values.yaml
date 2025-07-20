@@ -1,0 +1,12 @@
+server:
+  ingress:
+    enabled: true
+    # ingressClassName: ingress-nginx
+    # path: /
+    # pathType: Prefix
+    # annotations:
+    #   cert-manager.io/cluster-issuer: ca
+    # tls: true
+    # extraTls:
+    #   - secretName: argo-cd.tom.lan-tls
+    #     hosts:
