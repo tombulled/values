@@ -13,3 +13,6 @@ server:
     # extraTls:
     #   - secretName: argo-cd.tom.lan-tls
     #     hosts:
+
+  extraArgs:
+    - --insecure
