@@ -12,6 +12,10 @@ loki:
 alloy:
   enabled: false
 
+storageClasses:
+  openebs-zfs:
+    enabled: true
+
 # openebs-crds:
 #   csi:
 #     volumeSnapshots:
