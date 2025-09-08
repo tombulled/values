@@ -2,10 +2,9 @@ mattermostCR:
   enabled: true
   name: mattermost
   spec:
-    # image: mattermost/mattermost-enterprise-edition
-    version: 10.10.1
-    replicas: 1
-    size: 100users
+    # version: 10.10.1
+    # replicas: 1
+    # size: 100users
     ingress:
       enabled: true
       host: mattermost.tom.lan
