@@ -1,22 +1,22 @@
-# mattermostCR:
-#   enabled: true
-#   name: mattermost
-#   spec:
-#     # version: 10.10.1
-#     # replicas: 1
-#     # size: 100users
-#     ingress:
-#       enabled: true
-#       host: mattermost.tom.lan
-#     # database:
-#     #   external:
-#     #     secret:  <secret-name>
-#     # fileStore:
-#     #   external:
-#     #     url:     s3.amazonaws.com
-#     #     bucket:  <bucket-name>
-#     #     secret:  <secret-name>
-#   # elasticSearch:
-#   #   host: ""                                      # Elasticsearch hostname.
-#   #   username: ""                                  # Username to log into Elasticsearch.
-#   #   password: "" 
+mattermost:
+  enabled: true
+  name: mattermost
+  spec:
+    # version: 10.10.1
+    # replicas: 1
+    # size: 100users
+    ingress:
+      enabled: true
+      host: mattermost.tom.lan
+    # database:
+    #   external:
+    #     secret:  <secret-name>
+    # fileStore:
+    #   external:
+    #     url:     s3.amazonaws.com
+    #     bucket:  <bucket-name>
+    #     secret:  <secret-name>
+  # elasticSearch:
+  #   host: ""                                      # Elasticsearch hostname.
+  #   username: ""                                  # Username to log into Elasticsearch.
+  #   password: "" 
