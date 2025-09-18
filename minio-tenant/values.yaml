@@ -1,0 +1,37 @@
+tenant:
+  name: minio
+
+  configSecret:
+    name: minio-env-configuration
+    accessKey: minio
+    secretKey: minio
+
+  pools:
+    - servers: 1
+      volumesPerServer: 1
+      size: 10Gi
+      storageClassName: openebs-zfs
+
+  metrics:
+    enabled: true
+
+  buckets:
+    - name: test
+  users: []
+
+  logging:
+    json: true
+    anonymous: false
+    quiet: false
+
+  ingress:
+    api:
+      enabled: true
+      ingressClassName: nginx
+      host: minio.tom.lan
+    console:
+      enabled: true
+      ingressClassName: nginx
+      host: minio-console.tom.lan
+
+  extraResources: []
