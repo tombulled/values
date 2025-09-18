@@ -4,7 +4,8 @@ tenant:
   configSecret:
     name: minio-env-configuration
     accessKey: minio
-    secretKey: minio
+    # WARN: Secret key length should be between 8 and 40 characters
+    secretKey: gFQlPp17Kx5WoJywlF9a
 
   pools:
     - name: pool-0
