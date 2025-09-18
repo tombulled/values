@@ -1,0 +1,19 @@
+extraResources:
+  - apiVersion: "acid.zalan.do/v1"
+    kind: postgresql
+    metadata:
+      name: postgresql
+    spec:
+      teamId: "tom.lan"
+      volume:
+        size: 1Gi
+      numberOfInstances: 2
+      users:
+        admin:
+          - superuser
+          - createdb
+      databases:
+        test: admin
+      # preparedDatabases: {}
+      postgresql:
+        version: "17"
