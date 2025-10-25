@@ -1,3 +1,4 @@
+# See: https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml
 mattermost:
   enabled: true
   name: mattermost

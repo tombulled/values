@@ -1,3 +1,4 @@
+# See: https://cloudnative-pg.io/documentation/1.27/samples/cluster-example-full.yaml
 extraResources:
   - apiVersion: postgresql.cnpg.io/v1
     kind: Cluster
@@ -8,3 +9,12 @@ extraResources:
       storage:
         storageClass: openebs-zfs
         size: 1Gi
+  - apiVersion: postgresql.cnpg.io/v1
+    kind: Database
+    metadata:
+      name: mattermost
+    spec:
+      name: mattermost
+      owner: app
+      cluster:
+        name: postgresql
