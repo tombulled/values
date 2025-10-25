@@ -1,6 +1,0 @@
-configKubernetes:
-  enable_finalizers: true
-  enable_owner_references: true
-
-configDebug:
-  debug_logging: true
