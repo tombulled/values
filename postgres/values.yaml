@@ -6,4 +6,5 @@ extraResources:
     spec:
       instances: 3
       storage:
+        storageClass: openebs-zfs
         size: 1Gi
