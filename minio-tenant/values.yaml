@@ -1,3 +1,4 @@
+# See: https://github.com/minio/operator/blob/master/helm/tenant/values.yaml
 tenant:
   name: minio
 
@@ -19,7 +20,9 @@ tenant:
 
   buckets:
     - name: test
-  users: []
+    - name: mattermost
+  users:
+    - name: minio-user-mattermost
 
   logging:
     json: true
@@ -36,4 +39,12 @@ ingress:
     ingressClassName: nginx
     host: minio-console.tom.lan
 
-extraResources: []
+extraResources:
+  - |
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: minio-user-mattermost
+    stringData:
+      CONSOLE_ACCESS_KEY: mattermost
+      CONSOLE_SECRET_KEY: mattermost
