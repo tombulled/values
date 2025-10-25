@@ -9,9 +9,9 @@ mattermost:
     ingress:
       enabled: true
       host: mattermost.tom.lan
-    # database:
-    #   external:
-    #     secret:  <secret-name>
+    database:
+      external:
+        secret: mattermost-database
     # fileStore:
     #   external:
     #     url:     s3.amazonaws.com
