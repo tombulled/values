@@ -18,3 +18,11 @@ extraResources:
       owner: app
       cluster:
         name: postgresql
+  - apiVersion: v1
+    kind: Secret
+    metadata:
+      name: postgresql-mattermost-user
+    type: kubernetes.io/basic-auth
+    stringData:
+      username: mattermost
+      password: mattermost
