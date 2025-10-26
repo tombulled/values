@@ -19,4 +19,5 @@ mattermost:
         bucket: mattermost
         secret: mattermost-filestore
     mattermostEnv:
-      MM_FILESETTINGS_AMAZONS3SSL: false
+      - name: MM_FILESETTINGS_AMAZONS3SSL
+        value: "true"
