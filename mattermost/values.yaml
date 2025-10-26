@@ -6,6 +6,7 @@ mattermost:
     # See: https://github.com/mattermost/mattermost/issues/33799#issuecomment-3448733273
     image: tombulled/mattermost-enterprise-edition
     version: 10.6.1
+    replicas: 1
     ingress:
       enabled: true
       host: mattermost.tom.lan
