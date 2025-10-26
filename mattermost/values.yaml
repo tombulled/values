@@ -3,6 +3,8 @@ mattermost:
   enabled: true
   name: mattermost
   spec:
+    image: tombulled/mattermost-enterprise-edition
+    version: 10.6.1
     ingress:
       enabled: true
       host: mattermost.tom.lan
