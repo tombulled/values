@@ -15,7 +15,7 @@ mattermost:
         secret: mattermost-database
     fileStore:
       external:
-        url: minio:443
+        url: http://minio/
         bucket: mattermost
         secret: mattermost-filestore
     mattermostEnv:
