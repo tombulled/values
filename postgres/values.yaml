@@ -9,19 +9,29 @@ extraResources:
       storage:
         storageClass: openebs-zfs
         size: 1Gi
+      managed:
+        # See: https://cloudnative-pg.io/documentation/current/declarative_role_management/
+        roles:
+          - name: mattermost
+            login: true
+            passwordSecret:
+              name: postgresql-user-mattermost
+  # See: https://cloudnative-pg.io/documentation/preview/declarative_database_management/
   - apiVersion: postgresql.cnpg.io/v1
     kind: Database
     metadata:
       name: mattermost
     spec:
       name: mattermost
-      owner: app
+      owner: mattermost
       cluster:
         name: postgresql
   - apiVersion: v1
     kind: Secret
     metadata:
-      name: postgresql-mattermost-user
+      name: postgresql-user-mattermost
+      labels:
+        cnpg.io/reload: "true"
     type: kubernetes.io/basic-auth
     stringData:
       username: mattermost
