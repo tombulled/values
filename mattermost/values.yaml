@@ -3,6 +3,7 @@ mattermost:
   enabled: true
   name: mattermost
   spec:
+    # See: https://github.com/mattermost/mattermost/issues/33799#issuecomment-3448733273
     image: tombulled/mattermost-enterprise-edition
     version: 10.6.1
     ingress:
