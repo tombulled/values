@@ -15,13 +15,13 @@ mattermost:
         secret: mattermost-database
     fileStore:
       external:
-        url: http://minio/
+        url: minio
         bucket: mattermost
         secret: mattermost-filestore
     # See: https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html
     mattermostEnv:
       - name: MM_FILESETTINGS_AMAZONS3SSL
-        value: "true"
+        value: "false"
       - name: MM_SERVICESETTINGS_ENABLESECURITYFIXALERT
         value: "false"
       - name: MM_LOGSETTINGS_ENABLEDIAGNOSTICS
