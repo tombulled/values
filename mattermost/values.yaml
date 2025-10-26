@@ -18,3 +18,5 @@ mattermost:
         url: minio:443
         bucket: mattermost
         secret: mattermost-filestore
+    mattermostEnv:
+      MM_FILESETTINGS_AMAZONS3SSL: false

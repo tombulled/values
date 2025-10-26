@@ -18,6 +18,10 @@ tenant:
   metrics:
     enabled: true
 
+  certificate:
+    # Disable TLS
+    requestAutoCert: false
+
   buckets:
     - name: test
     - name: mattermost
