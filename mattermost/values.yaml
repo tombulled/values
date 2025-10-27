@@ -9,7 +9,8 @@ mattermost:
     replicas: 1
     ingress:
       enabled: true
-      host: mattermost.tom.lan
+      # host: mattermost.tom.lan
+      host: server.tailbc039.ts.net
     database:
       external:
         secret: mattermost-database
