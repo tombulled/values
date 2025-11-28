@@ -1,0 +1,9 @@
+global:
+  domain: argo-cd.tom.lan
+
+server:
+  ingress:
+    enabled: true
+
+  extraArgs:
+    - --insecure
