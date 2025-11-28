@@ -18,10 +18,13 @@ providers:
   file:
     enabled: false
   kubernetesIngressNginx:
-    enabled: true
+    enabled: false # FOR NOW
+    watchIngressWithoutClass: true
   knative:
     enabled: false
 
 global:
   checkNewVersion: false
   sendAnonymousUsage: false
+
+extraObjects: []
