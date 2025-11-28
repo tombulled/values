@@ -24,9 +24,9 @@ extraResources:
     spec:
       replicas: 1
       homerConfig:
-        title: "My Dashboard"
-        subtitle: "Welcome to my services"
-        theme: "default"
+        title: "TOM.LAN"
+        subtitle: "Dashboard"
+        # theme: "default"
         header: true
-        footer: "<p>Powered by Homer Operator</p>"
-        logo: "https://raw.githubusercontent.com/rajsinghtech/homer-operator/main/homer/Homer-Operator.png"
+        footer: false
+        # logo: "https://raw.githubusercontent.com/rajsinghtech/homer-operator/main/homer/Homer-Operator.png"
