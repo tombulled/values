@@ -1,0 +1,27 @@
+deployment:
+  revisionHistoryLimit: 0
+
+ingressClass:
+  isDefaultClass: false
+
+# experimental:
+#   kubernetesGateway:
+#      enabled: true
+
+providers:
+  kubernetesCRD:
+    enabled: true
+  kubernetesIngress:
+    enabled: false
+  kubernetesGateway:
+    enabled: false
+  file:
+    enabled: false
+  kubernetesIngressNginx:
+    enabled: true
+  knative:
+    enabled: false
+
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
