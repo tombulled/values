@@ -29,5 +29,7 @@ extraResources:
         # theme: "default"
         header: true
         footer: false
-        logo: "assets/logo.png"
+        logo: "logo.png"
+        # logo: "default-assets/icons/logo.png"
+        # logo: "assets/icons/logo.svg"
         # logo: "https://raw.githubusercontent.com/rajsinghtech/homer-operator/main/homer/Homer-Operator.png"
