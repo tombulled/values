@@ -15,8 +15,6 @@ providers:
     enabled: false
     # publishedService:
     #   enabled: true
-    # ingressEndpoint:
-    #   publishedService: "namespace/foo-service"
   kubernetesGateway:
     enabled: false
   file:
@@ -28,7 +26,6 @@ providers:
       # WARN: Needed to prevent Ingresses getting stuck Progressing in Argo.
       # See https://github.com/argoproj/argo-cd/issues/4863 for more info.
       enabled: true
-    # endpoint:
   knative:
     enabled: false
 
