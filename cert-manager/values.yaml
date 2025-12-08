@@ -20,7 +20,7 @@ extraObjects:
         solvers:
           - http01:
               ingress:
-                ingressClassName: traefik
+                ingressClassName: nginx
   # - |
   #   apiVersion: v1
   #   kind: ConfigMap
