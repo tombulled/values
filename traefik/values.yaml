@@ -48,10 +48,10 @@ providers:
   kubernetesIngressNginx:
     enabled: true
     watchIngressWithoutClass: true
-    publishService:
-      # WARN: Needed to prevent Ingresses getting stuck Progressing in Argo.
-      # See https://github.com/argoproj/argo-cd/issues/4863 for more info.
-      enabled: true
+    # publishService:
+    #   # WARN: Needed to prevent Ingresses getting stuck Progressing in Argo.
+    #   # See https://github.com/argoproj/argo-cd/issues/4863 for more info.
+    #   enabled: true
 
 global:
   checkNewVersion: false
@@ -121,11 +121,10 @@ extraObjects:
 logs:
   general:
     level: INFO
-  # This enables access logs, outputting them to Traefik's standard output by default. The [Access Logs Documentation](https://doc.traefik.io/traefik/observability/access-logs/) covers formatting, filtering, and output options.
   access:
     enabled: true
 
-# Enables Prometheus for Metrics
+# Enables Prometheus Metrics
 metrics:
   prometheus:
     enabled: true
