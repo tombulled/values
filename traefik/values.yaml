@@ -53,6 +53,9 @@ providers:
     #   # See https://github.com/argoproj/argo-cd/issues/4863 for more info.
     #   enabled: true
 
+service:
+  type: ClusterIP
+
 global:
   checkNewVersion: false
   sendAnonymousUsage: false
