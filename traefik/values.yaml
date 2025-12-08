@@ -17,19 +17,19 @@ ports:
     port: 443
     nodePort: 30001
 
-# # Enables the dashboard in Secure Mode
-# api:
-#   dashboard: true
-#   insecure: false
+# Enables the dashboard in Secure Mode
+api:
+  dashboard: true
+  insecure: false
 
-# ingressRoute:
-#   dashboard:
-#     enabled: true
-#     matchRule: Host(`traefik.tom.lan`)
-#     entryPoints:
-#       - websecure
-#     middlewares:
-#       - name: dashboard-auth
+ingressRoute:
+  dashboard:
+    enabled: true
+    matchRule: Host(`traefik.tom.lan`)
+    entryPoints:
+      - websecure
+    # middlewares:
+    #   - name: dashboard-auth
 
 # # Creates a BasiAuth Middleware and Secret for the Dashboard Security
 # extraObjects:
