@@ -36,7 +36,7 @@ providers:
     enabled: true
     watchIngressWithoutClass: true
     publishService:
-      enabled: false
+      enabled: true
 
 service:
   type: ClusterIP
