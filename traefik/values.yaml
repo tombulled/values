@@ -29,7 +29,7 @@ ingressClass:
 
 providers:
   kubernetesCRD:
-    enabled: false
+    enabled: true
   kubernetesIngress:
     enabled: false
   kubernetesIngressNginx:
