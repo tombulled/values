@@ -3,8 +3,8 @@ extraResources:
     kind: Ingress
     metadata:
       name: homer
-    annotations:
-      cert-manager.io/cluster-issuer: hawk-acme
+      annotations:
+        cert-manager.io/cluster-issuer: hawk-acme
     spec:
       ingressClassName: nginx
       rules:
