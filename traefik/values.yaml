@@ -58,8 +58,8 @@ service:
 
 updateStrategy:
   rollingUpdate:
-    maxUnavailable: 0
-    maxSurge: ~
+    maxUnavailable: 1
+    # maxSurge: ~
 
 global:
   checkNewVersion: false
