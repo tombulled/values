@@ -1,37 +1,62 @@
+ports:
+  web:
+    hostPort: 80
+    redirections:
+      entryPoint:
+        to: websecure
+        scheme: https
+        permanent: true
+  websecure:
+    hostPort: 443
+
+api:
+  dashboard: true
+  insecure: false
+
+ingressRoute:
+  dashboard:
+    enabled: true
+    matchRule: Host(`traefik.tom.lan`)
+    entryPoints:
+      - websecure
+
 deployment:
+  kind: DaemonSet
   revisionHistoryLimit: 0
 
 ingressClass:
   isDefaultClass: false
-
-# experimental:
-#   kubernetesGateway:
-#      enabled: true
 
 providers:
   kubernetesCRD:
     enabled: true
   kubernetesIngress:
     enabled: false
-    # publishedService:
-    #   enabled: true
-  kubernetesGateway:
-    enabled: false
-  file:
-    enabled: false
   kubernetesIngressNginx:
     enabled: true
     watchIngressWithoutClass: true
-    publishService:
-      # WARN: Needed to prevent Ingresses getting stuck Progressing in Argo.
-      # See https://github.com/argoproj/argo-cd/issues/4863 for more info.
-      enabled: true
-  knative:
-    enabled: false
+
+service:
+  type: ClusterIP
+
+updateStrategy:
+  rollingUpdate:
+    maxUnavailable: 1
+    maxSurge: ~
 
 global:
   checkNewVersion: false
   sendAnonymousUsage: false
+
+logs:
+  general:
+    level: INFO
+  access:
+    enabled: true
+
+metrics:
+  prometheus:
+    enabled: true
 
 extraObjects:
   - apiVersion: networking.k8s.io/v1
