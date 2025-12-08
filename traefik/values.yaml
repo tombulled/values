@@ -33,6 +33,25 @@ ingressRoute:
 
 deployment:
   kind: DaemonSet
+  revisionHistoryLimit: 0
+
+ingressClass:
+  isDefaultClass: false
+
+providers:
+  kubernetesCRD:
+    enabled: false
+  kubernetesIngress:
+    enabled: false
+    # publishedService:
+    #   enabled: true # the default?
+  kubernetesIngressNginx:
+    enabled: true
+    watchIngressWithoutClass: true
+    publishService:
+      # WARN: Needed to prevent Ingresses getting stuck Progressing in Argo.
+      # See https://github.com/argoproj/argo-cd/issues/4863 for more info.
+      enabled: true
 
 # # Creates a BasiAuth Middleware and Secret for the Dashboard Security
 # extraObjects:
