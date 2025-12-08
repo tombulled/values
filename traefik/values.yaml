@@ -4,7 +4,7 @@ ports:
   # Defines the HTTP entry point named 'web'
   web:
     port: 80
-    nodePort: 30000
+    hostPort: 30000
     # Instructs this entry point to redirect all traffic to the 'websecure' entry point
     redirections:
       entryPoint:
@@ -15,7 +15,7 @@ ports:
   # Defines the HTTPS entry point named 'websecure'
   websecure:
     port: 443
-    nodePort: 30001
+    hostPort: 30001
 
 # Enables the dashboard in Secure Mode
 api:
