@@ -53,6 +53,20 @@ providers:
       # See https://github.com/argoproj/argo-cd/issues/4863 for more info.
       enabled: true
 
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+
+extraObjects:
+  - apiVersion: networking.k8s.io/v1
+    kind: IngressClass
+    metadata:
+      name: nginx
+      annotations:
+        ingressclass.kubernetes.io/is-default-class: "true"
+    spec:
+      controller: k8s.io/ingress-nginx
+
 # # Creates a BasiAuth Middleware and Secret for the Dashboard Security
 # extraObjects:
 #   - apiVersion: v1
