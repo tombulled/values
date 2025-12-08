@@ -4,6 +4,11 @@ crds:
 startupapicheck:
   enabled: false
 
+ingressShim:
+  defaultIssuerName: hawk-acme
+  defaultIssuerKind: ClusterIssuer
+  defaultIssuerGroup: "cert-manager.io"
+
 extraObjects:
   - |
     apiVersion: cert-manager.io/v1
