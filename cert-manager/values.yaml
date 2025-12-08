@@ -5,36 +5,36 @@ replicaCount: 1
 
 # installCRDs: true
 
-image:
-  repository: quay.io/jetstack/cert-manager-controller
-  tag: v1.8.0
-  pullPolicy: IfNotPresent
+# image:
+#   repository: quay.io/jetstack/cert-manager-controller
+#   tag: v1.8.0
+#   pullPolicy: IfNotPresent
 
-webhook:
-  replicaCount: 1
+# webhook:
+#   replicaCount: 1
 
-  image:
-    repository: quay.io/jetstack/cert-manager-webhook
-    tag: v1.8.0
-    pullPolicy: IfNotPresent
+#   image:
+#     repository: quay.io/jetstack/cert-manager-webhook
+#     tag: v1.8.0
+#     pullPolicy: IfNotPresent
 
-cainjector:
-  enabled: true
+# cainjector:
+#   enabled: true
 
-  replicaCount: 1
+#   replicaCount: 1
 
-  image:
-    repository: quay.io/jetstack/cert-manager-cainjector
-    tag: v1.8.0
-    pullPolicy: IfNotPresent
+#   image:
+#     repository: quay.io/jetstack/cert-manager-cainjector
+#     tag: v1.8.0
+#     pullPolicy: IfNotPresent
 
 startupapicheck:
   enabled: false
 
-  image:
-    repository: quay.io/jetstack/cert-manager-ctl
-    tag: v1.8.0
-    pullPolicy: IfNotPresent
+  # image:
+  #   repository: quay.io/jetstack/cert-manager-ctl
+  #   tag: v1.8.0
+  #   pullPolicy: IfNotPresent
 
 # extraObjects:
 #   - |
