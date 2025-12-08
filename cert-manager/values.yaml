@@ -1,57 +1,25 @@
 crds:
   enabled: true
 
-replicaCount: 1
-
-# installCRDs: true
-
-# image:
-#   repository: quay.io/jetstack/cert-manager-controller
-#   tag: v1.8.0
-#   pullPolicy: IfNotPresent
-
-# webhook:
-#   replicaCount: 1
-
-#   image:
-#     repository: quay.io/jetstack/cert-manager-webhook
-#     tag: v1.8.0
-#     pullPolicy: IfNotPresent
-
-# cainjector:
-#   enabled: true
-
-#   replicaCount: 1
-
-#   image:
-#     repository: quay.io/jetstack/cert-manager-cainjector
-#     tag: v1.8.0
-#     pullPolicy: IfNotPresent
-
 startupapicheck:
   enabled: false
 
-  # image:
-  #   repository: quay.io/jetstack/cert-manager-ctl
-  #   tag: v1.8.0
-  #   pullPolicy: IfNotPresent
-
-# extraObjects:
-#   - |
-#     apiVersion: cert-manager.io/v1
-#     kind: ClusterIssuer
-#     metadata:
-#       name: hawk-acme
-#     spec:
-#       acme:
-#         # email: user@example.com
-#         server: https://ca.tom.lan/acme/acme/directory
-#         privateKeySecretRef:
-#           name: hawk-acme-account-key
-#         solvers:
-#           - http01:
-#               ingress:
-#                 ingressClassName: traefik
+extraObjects:
+  - |
+    apiVersion: cert-manager.io/v1
+    kind: ClusterIssuer
+    metadata:
+      name: hawk-acme
+    spec:
+      acme:
+        # email: user@example.com
+        server: https://ca.tom.lan/acme/acme/directory
+        privateKeySecretRef:
+          name: hawk-acme-account-key
+        solvers:
+          - http01:
+              ingress:
+                ingressClassName: traefik
   # - apiVersion: v1
   #   kind: ConfigMap
   #   metadata:
