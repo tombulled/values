@@ -3,10 +3,12 @@ extraResources:
     kind: Ingress
     metadata:
       name: homer
+      annotations:
+        cert-manager.io/cluster-issuer: hawk-acme
     spec:
       ingressClassName: nginx
       rules:
-        - host: "homer.tom.lan"
+        - host: homer.tom.lan
           http:
             paths:
               - path: /
@@ -16,6 +18,10 @@ extraResources:
                     name: main-homer
                     port:
                       number: 80
+      tls:
+        - hosts:
+            - homer.tom.lan
+          secretName: homer.tom.lan-tls
   - apiVersion: homer.rajsingh.info/v1alpha1
     kind: Dashboard
     metadata:

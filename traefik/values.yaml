@@ -35,6 +35,8 @@ providers:
   kubernetesIngressNginx:
     enabled: true
     watchIngressWithoutClass: true
+    publishService:
+      enabled: true
 
 service:
   type: ClusterIP
