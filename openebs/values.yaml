@@ -21,7 +21,7 @@ localpv-provisioner:
 # Extras (Common)
 storageClasses:
   openebs-zfs:
-    enabled: true
+    enabled: false # TEMP!
     allowVolumeExpansion: true
     parameters:
       recordsize: "128k"
