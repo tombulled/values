@@ -12,10 +12,3 @@ server:
     annotations:
       cert-manager.io/cluster-issuer: hawk-acme
     tls: true
-    # extraTls:
-    #   - hosts:
-    #     - argo-cd.tom.lan
-    #     secretName: argo-cd.tom.lan-tls
-
-  # extraArgs:
-  #   - --insecure
