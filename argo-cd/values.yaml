@@ -1,9 +1,21 @@
 global:
   domain: argo-cd.tom.lan
 
+configs:
+  params:
+    server.insecure: true
+
 server:
   ingress:
     enabled: true
+    ingressClassName: nginx
+    annotations:
+      cert-manager.io/cluster-issuer: hawk-acme
+    tls: true
+    # extraTls:
+    #   - hosts:
+    #     - argo-cd.tom.lan
+    #     secretName: argo-cd.tom.lan-tls
 
-  extraArgs:
-    - --insecure
+  # extraArgs:
+  #   - --insecure
