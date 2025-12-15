@@ -71,3 +71,8 @@ metrics:
 #         ingressclass.kubernetes.io/is-default-class: "true"
 #     spec:
 #       controller: k8s.io/ingress-nginx
+
+# ref: https://github.com/argoproj/argo-cd/issues/4863
+# ref: https://github.com/traefik/traefik/issues/6303
+additionalArguments:
+  - "--providers.kubernetesingress.ingressendpoint.ip=127.0.0.1"
