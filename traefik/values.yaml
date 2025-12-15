@@ -32,6 +32,8 @@ providers:
     enabled: true
   kubernetesIngress:
     enabled: true
+    publishedService:
+      enabled: true
   # kubernetesIngressNginx:
   #   enabled: true
   #   watchIngressWithoutClass: true
