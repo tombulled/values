@@ -34,11 +34,6 @@ providers:
     enabled: true
     publishedService:
       enabled: false
-  # kubernetesIngressNginx:
-  #   enabled: true
-  #   watchIngressWithoutClass: true
-  #   publishService:
-  #     enabled: true
 
 service:
   type: ClusterIP
@@ -61,16 +56,6 @@ logs:
 metrics:
   prometheus:
     enabled: true
-
-# extraObjects:
-#   - apiVersion: networking.k8s.io/v1
-#     kind: IngressClass
-#     metadata:
-#       name: nginx
-#       annotations:
-#         ingressclass.kubernetes.io/is-default-class: "true"
-#     spec:
-#       controller: k8s.io/ingress-nginx
 
 # ref: https://github.com/argoproj/argo-cd/issues/4863
 # ref: https://github.com/traefik/traefik/issues/6303
