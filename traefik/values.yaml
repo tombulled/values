@@ -25,18 +25,18 @@ deployment:
   revisionHistoryLimit: 0
 
 ingressClass:
-  isDefaultClass: false
+  isDefaultClass: true
 
 providers:
   kubernetesCRD:
     enabled: true
   kubernetesIngress:
     enabled: true
-  kubernetesIngressNginx:
-    enabled: true
-    watchIngressWithoutClass: true
-    publishService:
-      enabled: true
+  # kubernetesIngressNginx:
+  #   enabled: true
+  #   watchIngressWithoutClass: true
+  #   publishService:
+  #     enabled: true
 
 service:
   type: ClusterIP
@@ -60,12 +60,12 @@ metrics:
   prometheus:
     enabled: true
 
-extraObjects:
-  - apiVersion: networking.k8s.io/v1
-    kind: IngressClass
-    metadata:
-      name: nginx
-      annotations:
-        ingressclass.kubernetes.io/is-default-class: "true"
-    spec:
-      controller: k8s.io/ingress-nginx
+# extraObjects:
+#   - apiVersion: networking.k8s.io/v1
+#     kind: IngressClass
+#     metadata:
+#       name: nginx
+#       annotations:
+#         ingressclass.kubernetes.io/is-default-class: "true"
+#     spec:
+#       controller: k8s.io/ingress-nginx
