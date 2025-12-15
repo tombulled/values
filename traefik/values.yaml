@@ -33,7 +33,7 @@ providers:
   kubernetesIngress:
     enabled: true
     publishedService:
-      enabled: true
+      enabled: false
   # kubernetesIngressNginx:
   #   enabled: true
   #   watchIngressWithoutClass: true
