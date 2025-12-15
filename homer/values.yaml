@@ -6,7 +6,7 @@ extraResources:
       annotations:
         cert-manager.io/cluster-issuer: hawk-acme
     spec:
-      ingressClassName: nginx
+      ingressClassName: traefik
       rules:
         - host: homer.tom.lan
           http:
