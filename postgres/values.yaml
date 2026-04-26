@@ -7,7 +7,8 @@ extraResources:
     spec:
       instances: 3
       storage:
-        storageClass: openebs-zfs
+        # NOTE: Disabled so that the default will be used
+        # storageClass: openebs-zfs
         size: 1Gi
       managed:
         # See: https://cloudnative-pg.io/documentation/current/declarative_role_management/
