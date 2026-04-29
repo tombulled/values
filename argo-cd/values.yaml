@@ -24,3 +24,13 @@ server:
 
 applicationSet:
   allowAnyNamespace: true
+
+### extras ###
+extras:
+  sealedSecrets:
+    argocd-secret:
+      # labels:
+      #   app.kubernetes.io/name: argocd-secret
+      #   app.kubernetes.io/part-of: argocd
+      encryptedData:
+        admin.password: TODO
