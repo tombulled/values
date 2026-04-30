@@ -33,11 +33,9 @@ extras:
             filters:
               - type: URLRewrite
                 urlRewrite:
-                  # hostname: elsewhere.example
                   path:
-                    type: ReplacePrefixMatch # ReplaceFullPath
+                    type: ReplacePrefixMatch
                     replacePrefixMatch: /
             backendRefs:
               - name: sealed-secrets-web
-                namespace: sealed-secrets # remove me?
                 port: 80
