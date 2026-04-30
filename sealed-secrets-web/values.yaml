@@ -21,9 +21,6 @@ extras:
         name: sealed-secrets-web
       spec:
         parentRefs:
-          # - name: traefik
-          #   sectionName: http
-          #   kind: Gateway
           - name: traefik-gateway
             namespace: traefik
         hostnames:
@@ -33,6 +30,13 @@ extras:
               - path:
                   type: PathPrefix
                   value: /sealed-secrets
+            filters:
+              - type: URLRewrite
+                urlRewrite:
+                  # hostname: elsewhere.example
+                  path:
+                    type: ReplaceFullPath
+                    replacePrefixMatch: /
             backendRefs:
               - name: sealed-secrets-web
                 namespace: sealed-secrets # remove me?
