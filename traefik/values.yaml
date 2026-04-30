@@ -69,7 +69,8 @@ gateway:
       port: 8000
       hostname: localhost
       protocol: HTTP
-      namespacePolicy: ~
+      namespacePolicy:
+        from: All
 
 # extraObjects:
 #   - apiVersion: networking.k8s.io/v1
