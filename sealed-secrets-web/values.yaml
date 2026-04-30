@@ -1,3 +1,4 @@
+webLogs: true
 webContext: /sealed-secrets
 
 # ingress:
