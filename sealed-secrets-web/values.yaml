@@ -1,13 +1,15 @@
-# webContext: /sealed-secrets
+webContext: /sealed-secrets
 
-ingress:
-  enabled: true
-  className: ingress-nginx
-  annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
-  hosts:
-    - host: localhost
-      paths:
-        - path: /sealed-secrets(/|$)(.*)
-          pathType: ImplementationSpecific
+# ingress:
+#   enabled: true
+#   className: traefik
+#   annotations:
+#     traefik.ingress.kubernetes.io/router.middlewares: kube-system-strip-prefix@kubernetescrd
+#   hosts:
+#     - host: localhost
+#       paths:
+#         - path: /sealed-secrets(/|$)(.*)
+#           pathType: ImplementationSpecific
+
+### extras ###
+extras: {}
