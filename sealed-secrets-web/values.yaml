@@ -21,9 +21,11 @@ extras:
         name: sealed-secrets-web
       spec:
         parentRefs:
-          - name: traefik
-            sectionName: http
-            kind: Gateway
+          # - name: traefik
+          #   sectionName: http
+          #   kind: Gateway
+          - name: traefik-gateway
+            namespace: traefik
         hostnames:
           - localhost
         rules:
@@ -33,4 +35,5 @@ extras:
                   value: /sealed-secrets
             backendRefs:
               - name: sealed-secrets-web
+                namespace: sealed-secrets # remove me?
                 port: 80
