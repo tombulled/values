@@ -1,3 +1,8 @@
 ingress:
   enabled: true
   # className: ingress-nginx
+  hosts:
+    - host: localhost
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
