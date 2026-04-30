@@ -12,4 +12,22 @@ webContext: /sealed-secrets
 #           pathType: ImplementationSpecific
 
 ### extras ###
-extras: {}
+extras:
+  rawResources:
+    - apiVersion: gateway.networking.k8s.io/v1
+      kind: HTTPRoute
+      metadata:
+        name: example-httproute
+      spec:
+        parentRefs:
+        - name: example-gateway
+        hostnames:
+        - "www.example.com"
+        rules:
+        - matches:
+          - path:
+              type: PathPrefix
+              value: /login
+          backendRefs:
+          - name: example-svc
+            port: 8080
