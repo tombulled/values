@@ -1,6 +1,11 @@
 fullnameOverride: argocd
 
+
 configs:
+  secret:
+    # Whether to create the argocd-secret
+    createSecret: false
+
   params:
     server.insecure: true
 
