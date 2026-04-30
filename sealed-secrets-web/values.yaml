@@ -1,8 +1,10 @@
+webContext: /sealed-secrets
+
 ingress:
   enabled: true
   # className: ingress-nginx
   hosts:
     - host: localhost
       paths:
-        - path: /
+        - path: /sealed-secrets
           pathType: ImplementationSpecific
