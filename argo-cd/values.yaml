@@ -1,6 +1,5 @@
 fullnameOverride: argocd
 
-
 configs:
   secret:
     # Whether to create the argocd-secret
@@ -15,40 +14,19 @@ configs:
     applicationsetcontroller.allowed.scm.providers: git@github.com:tombulled/k8s.git
     applicationsetcontroller.tokenref.strict.mode: "true"
 
-  # secrets:
-  #   # Password generated using: python3 -c "import bcrypt,sys; print(bcrypt.hashpw(sys.stdin.read().strip().encode(), bcrypt.gensalt()).decode())" <<< "admin"
-  #   # Note: `bcrypt` can be installed using: python3 -m pip install bcrypt
-  #   argocdServerAdminPassword: "$2b$12$tr.kWcGd2HB3TNqJt7F.p.SWYfyjvUnea5mbh5HzAU5Wu1Ey6mk.S"
-
 server:
-  # ingress:
-  #   enabled: true
-  #   ingressClassName: nginx
-  #   annotations:
-  #     cert-manager.io/cluster-issuer: hawk-acme
-  #   tls: true
-
   httproute:
     enabled: true
     parentRefs:
-      - name: traefik-gateway
+      - group: gateway.networking.k8s.io
+        kind: Gateway
+        name: traefik-gateway
         namespace: traefik
-    # hostnames: []
     rules:
       - matches:
           - path:
               type: PathPrefix
               value: /argo-cd
-      # - matches:
-      #     - path:
-      #         type: PathPrefix
-      #         value: /argo-cd
-      #   filters:
-      #     - type: URLRewrite
-      #       urlRewrite:
-      #         path:
-      #           type: ReplacePrefixMatch
-      #           replacePrefixMatch: /
 
 applicationSet:
   allowAnyNamespace: true
