@@ -1,3 +1,15 @@
+alertmanager:
+  ingress:
+    enabled: true
+prometheus:
+  thanosIngress:
+    enabled: true
+  ingress:
+    enabled: true
+thanosRuler:
+  ingress:
+    enabled: true
+
 grafana:
   grafana.ini:
     server:
