@@ -7,6 +7,12 @@
 #   ingress:
 #     enabled: true
 
+# --web.external-url and --web.route-prefix options.
+# For example, set:
+#   --web.external-url="https://yourdomain.com/alertmanager/"
+#   --web.route-prefix="/"
+
+
 grafana:
   grafana.ini:
     server:
@@ -34,6 +40,12 @@ extraManifests:
             - path:
                 type: PathPrefix
                 value: /alertmanager
+          filters:
+            - type: URLRewrite
+              urlRewrite:
+                path:
+                  type: ReplacePrefixMatch
+                  replacePrefixMatch: /
           backendRefs:
             - group: ''
               kind: Service
