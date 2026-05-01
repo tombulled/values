@@ -1,3 +1,15 @@
+# [server]
+# domain = example.com
+# root_url = %(protocol)s://%(domain)s:%(http_port)s/grafana/
+# serve_from_sub_path = true
+
+grafana:
+  grafana.ini:
+    server:
+      domain: localhost
+      root_url: "%(protocol)s://%(domain)s:%(http_port)s/grafana"
+      serve_from_sub_path: true
+
 extraManifests:
   - apiVersion: gateway.networking.k8s.io/v1
     kind: HTTPRoute
@@ -5,25 +17,26 @@ extraManifests:
       name: '{{ printf "%s-%s" (include "kube-prometheus-stack.fullname" .) "grafana" }}'
     spec:
       parentRefs:
-        - name: traefik-gateway
+        - group: gateway.networking.k8s.io
+          kind: Gateway
+          name: traefik-gateway
           namespace: traefik
       hostnames:
         - localhost
       rules:
-        # - matches:
-        #     - path:
-        #         type: PathPrefix
-        #         value: /grafana
         - matches:
             - path:
                 type: PathPrefix
                 value: /grafana
-          filters:
-            - type: URLRewrite
-              urlRewrite:
-                path:
-                  type: ReplacePrefixMatch
-                  replacePrefixMatch: /
+          # filters:
+          #   - type: URLRewrite
+          #     urlRewrite:
+          #       path:
+          #         type: ReplacePrefixMatch
+          #         replacePrefixMatch: /
           backendRefs:
-            - name: '{{ printf "%s-%s" (include "kube-prometheus-stack.fullname" .) "grafana" }}'
+            - group: ''
+              kind: Service
+              name: '{{ printf "%s-%s" (include "kube-prometheus-stack.fullname" .) "grafana" }}'
               port: 80 # http-web
+              weight: 1
