@@ -8,6 +8,7 @@ configs:
   params:
     server.insecure: true
     server.rootpath: "/argo-cd"
+    server.basehref: "/argo-cd"
 
     application.namespaces: "*"
     applicationsetcontroller.namespaces: "*"
