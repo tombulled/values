@@ -24,8 +24,10 @@ grafana:
 prometheus:
   prometheusSpec:
     additionalArgs:
-      - "--web.external-url=/prometheus/"
-      - "--web.route-prefix=/prometheus/"
+      - name: web.external-url
+        value: /prometheus/
+      - name: web.route-prefix
+        value: /prometheus/
 
 extraManifests:
   - apiVersion: gateway.networking.k8s.io/v1
