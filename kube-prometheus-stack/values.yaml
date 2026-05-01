@@ -1,14 +1,11 @@
-alertmanager:
-  ingress:
-    enabled: true
-prometheus:
-  thanosIngress:
-    enabled: true
-  ingress:
-    enabled: true
-thanosRuler:
-  ingress:
-    enabled: true
+# alertmanager:
+#   ingress:
+#     enabled: true
+# prometheus:
+#   thanosIngress:
+#     enabled: true
+#   ingress:
+#     enabled: true
 
 grafana:
   grafana.ini:
@@ -20,6 +17,75 @@ grafana:
   adminPassword: admin # TODO: Migrate me to sealed secrets!
 
 extraManifests:
+  - apiVersion: gateway.networking.k8s.io/v1
+    kind: HTTPRoute
+    metadata:
+      name: '{{ printf "%s-%s" (include "kube-prometheus-stack.fullname" .) "alertmanager" }}'
+    spec:
+      parentRefs:
+        - group: gateway.networking.k8s.io
+          kind: Gateway
+          name: traefik-gateway
+          namespace: traefik
+      hostnames:
+        - localhost
+      rules:
+        - matches:
+            - path:
+                type: PathPrefix
+                value: /alertmanager
+          backendRefs:
+            - group: ''
+              kind: Service
+              name: '{{ printf "%s-%s" (include "kube-prometheus-stack.fullname" .) "alertmanager" }}'
+              port: 9093
+              weight: 1
+  - apiVersion: gateway.networking.k8s.io/v1
+    kind: HTTPRoute
+    metadata:
+      name: '{{ printf "%s-%s" (include "kube-prometheus-stack.fullname" .) "prometheus" }}'
+    spec:
+      parentRefs:
+        - group: gateway.networking.k8s.io
+          kind: Gateway
+          name: traefik-gateway
+          namespace: traefik
+      hostnames:
+        - localhost
+      rules:
+        - matches:
+            - path:
+                type: PathPrefix
+                value: /prometheus
+          backendRefs:
+            - group: ''
+              kind: Service
+              name: '{{ printf "%s-%s" (include "kube-prometheus-stack.fullname" .) "prometheus" }}'
+              port: 9090
+              weight: 1
+  - apiVersion: gateway.networking.k8s.io/v1
+    kind: HTTPRoute
+    metadata:
+      name: '{{ printf "%s-%s" (include "kube-prometheus-stack.fullname" .) "thanos-gateway" }}'
+    spec:
+      parentRefs:
+        - group: gateway.networking.k8s.io
+          kind: Gateway
+          name: traefik-gateway
+          namespace: traefik
+      hostnames:
+        - localhost
+      rules:
+        - matches:
+            - path:
+                type: PathPrefix
+                value: /thanos-gateway
+          backendRefs:
+            - group: ''
+              kind: Service
+              name: '{{ printf "%s-%s" (include "kube-prometheus-stack.fullname" .) "thanos-discovery" }}'
+              port: 10901
+              weight: 1
   - apiVersion: gateway.networking.k8s.io/v1
     kind: HTTPRoute
     metadata:
