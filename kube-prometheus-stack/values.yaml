@@ -69,6 +69,12 @@ extraManifests:
             - path:
                 type: PathPrefix
                 value: /prometheus
+          filters:
+            - type: URLRewrite
+              urlRewrite:
+                path:
+                  type: ReplacePrefixMatch
+                  replacePrefixMatch: /
           backendRefs:
             - group: ''
               kind: Service
