@@ -10,10 +10,20 @@ extraManifests:
       hostnames:
         - localhost
       rules:
+        # - matches:
+        #     - path:
+        #         type: PathPrefix
+        #         value: /grafana
         - matches:
             - path:
                 type: PathPrefix
                 value: /grafana
+          filters:
+            - type: URLRewrite
+              urlRewrite:
+                path:
+                  type: ReplacePrefixMatch
+                  replacePrefixMatch: /
           backendRefs:
             - name: '{{ printf "%s-%s" (include "kube-prometheus-stack.fullname" .) "grafana" }}'
               port: 80 # http-web
