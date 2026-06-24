@@ -21,7 +21,7 @@ api:
 #       - websecure
 
 deployment:
-  kind: DaemonSet
+  # kind: DaemonSet
   revisionHistoryLimit: 0
 
 # ingressClass:
@@ -41,8 +41,9 @@ providers:
   #   publishService:
   #     enabled: true
 
-service:
-  type: ClusterIP
+# service:
+#   spec:
+#     type: ClusterIP
 
 updateStrategy:
   rollingUpdate:
