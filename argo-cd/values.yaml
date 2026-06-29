@@ -17,6 +17,8 @@ configs:
 
   cm:
     url: http://localhost/argo-cd/
+    # ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/Generators-Git-File-Globbing/
+    applicationsetcontroller.enable.new.git.file.globbing: "true"
 
 server:
   httproute:
