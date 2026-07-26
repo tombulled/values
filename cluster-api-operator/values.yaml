@@ -1,4 +1,7 @@
-core: {}
+core:
+  cluster-api: {}
+
+# core: {}
 # cluster-api: {}         # Name, required
 #   namespace: ""         # Optional
 #   version: ""           # Optional
