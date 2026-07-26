@@ -1,5 +1,6 @@
 core:
-  cluster-api: {}
+  cluster-api:
+    createNamespace: false
 
 # core: {}
 # cluster-api: {}         # Name, required
