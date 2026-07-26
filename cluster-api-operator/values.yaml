@@ -19,41 +19,10 @@ infrastructure:
     createNamespace: false
 
 addon: {}
-# helm: {}                # Name, required
-#   namespace: ""         # Optional
-#   version: ""           # Optional
-#   createNamespace: true # Optional
-#   deployment:           # Optional
-#     replicas: 1
-#     nodeSelector: {}
-#     tolerations: []
-#     affinity: {}
-#     containers: []
-#     serviceAccountName: ""
-#     imagePullSecrets: []
-#   manager:              # Optional
-#     metrics:
-#       insecureDiagnostics: true
-#       diagnosticsAddress: localhost:8080
+  # helm:
+  #   namespace: caaph-system
+  #   createNamespace: false
 
 ipam: {}
-# in-cluster: {}          # Name, required
-#   namespace: ""         # Optional
-#   version: ""           # Optional
-#   createNamespace: true # Optional
-#   deployment:           # Optional
-#     replicas: 1
-#     nodeSelector: {}
-#     tolerations: []
-#     affinity: {}
-#     containers: []
-#     serviceAccountName: ""
-#     imagePullSecrets: []
-#   manager:              # Optional
-#     featureGates:
-#       ClusterTopology: true
-#     metrics:
-#       insecureDiagnostics: true
-#       diagnosticsAddress: localhost:8080
 
 enableHelmHook: false
