@@ -1,29 +1,13 @@
 core:
   cluster-api:
+    namespace: capi-system
     createNamespace: false
 
-# core: {}
-# cluster-api: {}         # Name, required
-#   namespace: ""         # Optional
-#   version: ""           # Optional
-#   createNamespace: true # Optional
-#   deployment:           # Optional
-#     replicas: 1
-#     nodeSelector: {}
-#     tolerations: []
-#     affinity: {}
-#     containers: []
-#     serviceAccountName: ""
-#     imagePullSecrets: []
-#   manager:              # Optional
-#     featureGates:
-#       ClusterTopology: true
-#     metrics:
-#       insecureDiagnostics: true
-#       diagnosticsAddress: localhost:8080
+bootstrap:
+  kubeadm:
+    namespace: capi-kubeadm-bootstrap-system
+    createNamespace: false
 
-bootstrap: {}
-# kubeadm: {}             # Name, required
 #   namespace: ""         # Optional
 #   version: ""           # Optional
 #   createNamespace: true # Optional
