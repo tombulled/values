@@ -23,6 +23,9 @@ addon: {}
   #   namespace: caaph-system
   #   createNamespace: false
 
-ipam: {}
+ipam:
+  metal3:
+    namespace: metal3-ipam-system
+    createNamespace: false
 
 enableHelmHook: false
