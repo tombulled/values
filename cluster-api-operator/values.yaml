@@ -1,0 +1,118 @@
+core: {}
+# cluster-api: {}         # Name, required
+#   namespace: ""         # Optional
+#   version: ""           # Optional
+#   createNamespace: true # Optional
+#   deployment:           # Optional
+#     replicas: 1
+#     nodeSelector: {}
+#     tolerations: []
+#     affinity: {}
+#     containers: []
+#     serviceAccountName: ""
+#     imagePullSecrets: []
+#   manager:              # Optional
+#     featureGates:
+#       ClusterTopology: true
+#     metrics:
+#       insecureDiagnostics: true
+#       diagnosticsAddress: localhost:8080
+
+bootstrap: {}
+# kubeadm: {}             # Name, required
+#   namespace: ""         # Optional
+#   version: ""           # Optional
+#   createNamespace: true # Optional
+#   deployment:           # Optional
+#     replicas: 1
+#     nodeSelector: {}
+#     tolerations: []
+#     affinity: {}
+#     containers: []
+#     serviceAccountName: ""
+#     imagePullSecrets: []
+#   manager:              # Optional
+#     featureGates:
+#       ClusterTopology: true
+#       MachinePool: true
+#     metrics:
+#       insecureDiagnostics: true
+#       diagnosticsAddress: localhost:8080
+
+controlPlane: {}
+# kubeadm: {}             # Name, required
+#   namespace: ""         # Optional
+#   version: ""           # Optional
+#   createNamespace: true # Optional
+#   deployment:           # Optional
+#     replicas: 1
+#     nodeSelector: {}
+#     tolerations: []
+#     affinity: {}
+#     containers: []
+#     serviceAccountName: ""
+#     imagePullSecrets: []
+#   manager:              # Optional
+#     featureGates:
+#       ClusterTopology: true
+#     metrics:
+#       insecureDiagnostics: true
+#       diagnosticsAddress: localhost:8080
+
+infrastructure: {}
+# docker: {}              # Name, required
+#   namespace: ""         # Optional
+#   version: ""           # Optional
+#   createNamespace: true # Optional
+#   deployment:           # Optional
+#     replicas: 1
+#     nodeSelector: {}
+#     tolerations: []
+#     affinity: {}
+#     containers: []
+#     serviceAccountName: ""
+#     imagePullSecrets: []
+#   manager:              # Optional
+#     featureGates:
+#       ClusterTopology: true
+#     metrics:
+#       insecureDiagnostics: true
+#       diagnosticsAddress: localhost:8080
+
+addon: {}
+# helm: {}                # Name, required
+#   namespace: ""         # Optional
+#   version: ""           # Optional
+#   createNamespace: true # Optional
+#   deployment:           # Optional
+#     replicas: 1
+#     nodeSelector: {}
+#     tolerations: []
+#     affinity: {}
+#     containers: []
+#     serviceAccountName: ""
+#     imagePullSecrets: []
+#   manager:              # Optional
+#     metrics:
+#       insecureDiagnostics: true
+#       diagnosticsAddress: localhost:8080
+
+ipam: {}
+# in-cluster: {}          # Name, required
+#   namespace: ""         # Optional
+#   version: ""           # Optional
+#   createNamespace: true # Optional
+#   deployment:           # Optional
+#     replicas: 1
+#     nodeSelector: {}
+#     tolerations: []
+#     affinity: {}
+#     containers: []
+#     serviceAccountName: ""
+#     imagePullSecrets: []
+#   manager:              # Optional
+#     featureGates:
+#       ClusterTopology: true
+#     metrics:
+#       insecureDiagnostics: true
+#       diagnosticsAddress: localhost:8080
