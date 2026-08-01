@@ -1,5 +1,8 @@
 fullnameOverride: argocd
 
+dex:
+  enabled: false
+
 configs:
   secret:
     # Whether to create the argocd-secret
