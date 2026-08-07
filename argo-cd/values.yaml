@@ -60,6 +60,11 @@ extraObjects:
       sourceRepos: []
       sourceNamespaces: []
       destinations: []
+      clusterResourceWhitelist: []
+      clusterResourceBlacklist:
+        - group: '*'
+          kind: '*'
+      namespaceResourceWhitelist: []
       namespaceResourceBlacklist:
-      - group: '*'
-        kind: '*'
+        - group: '*'
+          kind: '*'
