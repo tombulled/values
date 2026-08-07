@@ -57,6 +57,7 @@ extraObjects:
     metadata:
       name: default
     spec:
+      description: "Default Project"
       sourceRepos: []
       sourceNamespaces: []
       destinations: []
